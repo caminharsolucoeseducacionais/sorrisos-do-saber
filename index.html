@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estante Sorrisos do Saber</title>
+<meta name="description" content="Coleção Sorrisos do Saber, da Editora Confluência: livros de saúde bucal para a escola pública, do Infantil 4 ao 3º ano, para folhear.">
+<!-- Enquanto a coleção estiver em validação, o site fica fora do Google. Para aparecer nas buscas, apague a linha abaixo. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#4C9EE6">
+<meta property="og:title" content="Estante Sorrisos do Saber">
+<meta property="og:description" content="Livros de saúde bucal para a escola pública, do Infantil 4 ao 3º ano. Editora Confluência.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#F6EEE0; --papel-2:#FBF6EC; --tinta:#09264C; --tinta-2:#40587A;
+  --azul:#4C9EE6; --azul-fundo:#4C9EE6; --lede:#09264C; --marinho:#09264C; --sol:#FFC531;
+  --tabua-topo:#EAD6B1; --tabua-frente:#D2B585; --tabua-sombra:rgba(9,38,76,.18);
+  --chip:#FFFFFF; --chip-borda:rgba(9,38,76,.12);
+  --palco:#1B2C45; --palco-2:#24395A; --barra:#0F1E33; --barra-tinta:#F4EBDD; --barra-suave:#A9B8CC;
+  --foco:#FF8552;
+  --g: max(16px, env(safe-area-inset-left)); --gd: max(16px, env(safe-area-inset-right));
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papel:#0E1A2C; --papel-2:#13223A; --tinta:#F1E8D8; --tinta-2:#B7C3D4;
+    --azul-fundo:#2F6FB3; --lede:#FFFFFF;
+    --tabua-topo:#7A6142; --tabua-frente:#5E4930; --tabua-sombra:rgba(0,0,0,.45);
+    --chip:#1A2B45; --chip-borda:rgba(241,232,216,.14);
+    --palco:#0A1322; --palco-2:#122038; --barra:#070E19;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#0E1A2C; --papel-2:#13223A; --tinta:#F1E8D8; --tinta-2:#B7C3D4;
+  --azul-fundo:#2F6FB3; --lede:#FFFFFF;
+  --tabua-topo:#7A6142; --tabua-frente:#5E4930; --tabua-sombra:rgba(0,0,0,.45);
+  --chip:#1A2B45; --chip-borda:rgba(241,232,216,.14);
+  --palco:#0A1322; --palco-2:#122038; --barra:#070E19;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--papel);color:var(--tinta);font-family:"Andika",system-ui,sans-serif;font-size:17px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--foco);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Abertura ---------- */
+.topo{position:relative;background:var(--azul-fundo);padding:40px var(--gd) 76px var(--g);overflow:hidden}
+.topo-in{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.sol{position:absolute;width:86px;height:86px;border-radius:50%;background:var(--sol);right:max(6%, 24px);top:34px}
+.nuvem{position:absolute;fill:#fff;opacity:.95}
+.n1{width:118px;right:calc(max(6%, 24px) + 70px);top:84px}
+.n2{width:84px;left:46%;top:22px;opacity:.85}
+.marca{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0 0 18px}
+.marca span{display:inline-block;background:#fff;color:#09264C;font-family:"Baloo 2",system-ui,sans-serif;font-weight:800;line-height:1;letter-spacing:.01em;
+  font-size:clamp(34px, 6.4vw, 64px);padding:.14em .26em .04em;border-radius:6px;box-shadow:4px 5px 0 rgba(9,38,76,.85)}
+.marca span:first-child{transform:rotate(-2deg)}
+.marca span:last-child{transform:rotate(1deg) translateX(.35em)}
+.lede{max-width:34em;margin:0;color:var(--lede);font-size:clamp(17px, 2vw, 20px);font-weight:700}
+.lede small{display:block;font-weight:400;font-size:.86em;margin-top:4px}
+.rasgo{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:40px;display:block;fill:var(--papel)}
+
+/* ---------- Estante ---------- */
+main{max-width:1120px;margin:0 auto;padding:8px var(--gd) 48px var(--g)}
+.dica{margin:0 0 6px;color:var(--tinta-2);font-size:16px}
+.prateleira{margin:26px 0 22px}
+.prateleira h2{font-family:"Baloo 2",system-ui,sans-serif;font-weight:800;font-size:clamp(24px, 3vw, 30px);line-height:1.1;margin:0}
+.prateleira > p{margin:2px 0 0;color:var(--tinta-2)}
+.trilho{overflow-x:auto;overflow-y:hidden;margin:0 calc(-1 * var(--gd)) 0 calc(-1 * var(--g));padding:0 var(--gd) 6px var(--g);scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.livros{--lw:clamp(112px, 15.2vw, 172px);--pt:30px;--tb:26px;
+  position:relative;list-style:none;margin:0;padding:var(--pt) 10px 0;display:grid;grid-auto-flow:column;grid-auto-columns:var(--lw);
+  justify-content:space-between;column-gap:clamp(18px, 3vw, 40px);min-width:max-content;width:100%}
+.livros::before{content:"";position:absolute;left:0;right:0;top:calc(var(--pt) + var(--lw) * 1.3412 - 4px);height:12px;
+  background:var(--tabua-topo);clip-path:polygon(1.2% 0,98.8% 0,100% 100%,0 100%)}
+.livros::after{content:"";position:absolute;left:0;right:0;top:calc(var(--pt) + var(--lw) * 1.3412 + 8px);height:var(--tb);
+  background:linear-gradient(var(--tabua-frente),color-mix(in srgb, var(--tabua-frente) 82%, #000));border-radius:0 0 4px 4px;
+  box-shadow:0 14px 18px -10px var(--tabua-sombra)}
+.livros li{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.livro{position:relative;display:block;width:var(--lw);aspect-ratio:929/1246;padding:0;border:0;background:none;cursor:pointer;
+  border-radius:3px 7px 7px 3px;transform-origin:50% 100%;transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s;
+  box-shadow:2px 0 0 #fff, 3px 0 0 #d9d3c7, 5px 0 0 #fff, 6px 0 0 #cfc8bb, 0 14px 14px -8px rgba(9,38,76,.45)}
+.livro img{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.livro::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(90deg, rgba(0,0,0,.28) 0, rgba(255,255,255,.22) 3.2%, rgba(0,0,0,.08) 5.5%, rgba(0,0,0,0) 9%, rgba(0,0,0,0) 88%, rgba(255,255,255,.08) 100%)}
+.livro.ativo:hover,.livro.ativo:focus-visible{transform:translateY(-12px) rotate(-1.5deg);
+  box-shadow:2px 0 0 #fff, 3px 0 0 #d9d3c7, 5px 0 0 #fff, 6px 0 0 #cfc8bb, 0 30px 24px -14px rgba(9,38,76,.5)}
+.folhear{position:absolute;left:50%;bottom:12%;transform:translate(-50%,6px);opacity:0;transition:.3s;white-space:nowrap;
+  background:#09264C;color:#fff;font-family:"Baloo 2",system-ui,sans-serif;font-weight:700;font-size:15px;line-height:1;padding:9px 14px 7px;border-radius:999px;pointer-events:none}
+.livro.ativo:hover .folhear,.livro.ativo:focus-visible .folhear{opacity:1;transform:translate(-50%,0)}
+@media (hover:none){.livro.ativo .folhear{opacity:1;transform:translate(-50%,0)}}
+.livro.inativo{cursor:default;filter:saturate(.3) brightness(.97);opacity:.62}
+.etq{margin-top:calc(var(--tb) + 20px);text-align:center;width:calc(var(--lw) + 24px)}
+.chip{display:inline-flex;align-items:center;gap:7px;background:var(--chip);border:1px solid var(--chip-borda);border-radius:999px;padding:4px 12px 2px 9px;
+  font-family:"Baloo 2",system-ui,sans-serif;font-weight:800;font-size:15px;line-height:1.3;color:var(--tinta)}
+.chip i{width:11px;height:11px;border-radius:50%;background:var(--cor);flex:none;margin-top:-2px}
+.etq b{display:block;font-weight:400;font-size:14.5px;line-height:1.3;margin-top:6px;color:var(--tinta-2)}
+.etq em{display:block;font-style:normal;font-size:13px;margin-top:3px;color:var(--tinta-2);opacity:.8}
+
+/* ---------- Rodapé ---------- */
+.pe{background:#09264C;color:#E9E1D2;padding:28px var(--gd) 32px var(--g)}
+.pe-in{max-width:1120px;margin:0 auto;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.pe img{height:72px;width:auto;flex:none}
+.pe p{margin:0;font-size:15px;line-height:1.5;max-width:44em}
+.pe strong{font-family:"Baloo 2",system-ui,sans-serif;font-size:18px;color:#fff;display:block}
+
+/* ---------- Leitor ---------- */
+#leitor{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;background:radial-gradient(120% 90% at 50% 40%, var(--palco-2), var(--palco));color:var(--barra-tinta)}
+#leitor[hidden]{display:none}
+.barra{display:flex;align-items:center;gap:10px;padding:max(10px, env(safe-area-inset-top)) var(--gd) 10px var(--g);background:var(--barra)}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(244,235,221,.22);
+  background:rgba(255,255,255,.06);color:var(--barra-tinta);cursor:pointer;font-family:"Baloo 2",system-ui,sans-serif;font-weight:700;font-size:16px;line-height:1}
+.bt:hover{background:rgba(255,255,255,.14)}
+.bt:disabled{opacity:.35;cursor:default}
+.bt svg{width:20px;height:20px;flex:none}
+.bt.redondo{padding:0;width:44px}
+.leitor-tit{flex:1;min-width:0;text-align:center}
+.leitor-tit strong{display:block;font-family:"Baloo 2",system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#leitor-pag{font-size:14px;color:var(--barra-suave)}
+.leitor-tit .curto{display:none}
+.ir{min-height:44px;max-width:220px;border-radius:999px;border:1px solid rgba(244,235,221,.22);background:rgba(255,255,255,.06);color:var(--barra-tinta);
+  font:14.5px/1 "Andika",system-ui,sans-serif;padding:0 12px}
+.ir option{color:#09264C;background:#fff}
+#palco{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:18px}
+#palco .livro-host{filter:drop-shadow(0 22px 26px rgba(0,0,0,.5))}
+.pag{background:#fff;overflow:hidden}
+.pag img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.pag.carregando{background:#F3EDE2 linear-gradient(100deg, transparent 30%, rgba(255,255,255,.6) 50%, transparent 70%) 0 0/200% 100%;animation:brilho 1.4s linear infinite}
+@keyframes brilho{to{background-position:-200% 0}}
+.controle{display:flex;align-items:center;gap:12px;padding:10px var(--gd) max(12px, env(safe-area-inset-bottom)) var(--g);background:var(--barra)}
+.regua{flex:1;min-width:0;accent-color:var(--azul);height:44px}
+.aviso{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(9,20,36,.88);color:#F4EBDD;padding:10px 16px;border-radius:999px;font-size:15px;
+  white-space:nowrap;pointer-events:none;transition:opacity .6s;max-width:calc(100% - 32px);overflow:hidden;text-overflow:ellipsis}
+.aviso.some{opacity:0}
+@media (max-width:640px){
+  .ir{max-width:118px;font-size:13.5px}
+  #palco{padding:10px}
+  #tela{display:none}
+  .barra{gap:8px}
+  .leitor-tit .longo{display:none}
+  .leitor-tit .curto{display:inline}
+  .leitor-tit strong{font-size:15px}
+  .bt.texto span{display:none}
+  .bt.texto{padding:0;width:44px}
+  .topo{padding-top:30px}
+  .sol{width:60px;height:60px;top:26px}
+  .n1{width:84px;top:64px;right:66px}
+  .n2{display:none}
+}
+@media (prefers-reduced-motion: reduce){
+  .livro,.folhear,.aviso{transition:none}
+  .livro.ativo:hover,.livro.ativo:focus-visible{transform:none}
+  .pag.carregando{animation:none}
+}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="sol" aria-hidden="true"></div>
+  <svg class="nuvem n1" viewBox="0 0 120 52" aria-hidden="true"><path d="M18 50a17 17 0 0 1-2-33.9A22 22 0 0 1 57 9a17 17 0 0 1 29 6 18 18 0 0 1 16 35z"/></svg>
+  <svg class="nuvem n2" viewBox="0 0 120 52" aria-hidden="true"><path d="M18 50a17 17 0 0 1-2-33.9A22 22 0 0 1 57 9a17 17 0 0 1 29 6 18 18 0 0 1 16 35z"/></svg>
+  <div class="topo-in">
+    <h1 class="marca"><span>SORRISOS</span><span>DO SABER</span></h1>
+    <p class="lede">Coleção de saúde bucal para a escola pública, do Infantil 4 ao 3º ano.
+      <small>Editora Confluência · livros digitais para folhear</small></p>
+  </div>
+  <svg class="rasgo" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 L0,13.9 L17,17.8 L32,16.4 L54,10.7 L78,10.4 L101,10.8 L116,15.1 L147,11.5 L165,17.5 L198,16.9 L220,21.7 L235,20.3 L255,11.7 L271,13.7 L302,12.2 L327,17.7 L349,16.6 L364,10.7 L382,18.2 L405,13.8 L430,15.4 L450,19.5 L478,12.9 L504,16.3 L535,18.8 L555,21.8 L572,15.0 L601,11.8 L624,10.5 L652,19.2 L677,20.5 L698,18.3 L723,17.0 L747,20.1 L779,15.7 L807,10.7 L835,17.8 L869,19.9 L888,14.6 L916,10.3 L939,12.0 L955,10.7 L985,11.6 L1004,14.7 L1035,11.0 L1058,16.6 L1090,19.8 L1121,13.3 L1143,14.3 L1175,21.5 L1192,12.1 L1200,16 L1200,40 Z"/></svg>
+</header>
+
+<main>
+  <p class="dica">Escolha um livro da estante para folhear.</p>
+
+  <section class="prateleira" aria-labelledby="t-crianca">
+    <h2 id="t-crianca">Livros da Criança</h2>
+    <p>Para ler, conversar, desenhar e brincar em sala.</p>
+    <div class="trilho"><ul class="livros" id="estante-crianca"></ul></div>
+  </section>
+
+  <section class="prateleira" aria-labelledby="t-professor">
+    <h2 id="t-professor">Livros do Professor</h2>
+    <p>Planos de aula e as páginas da criança comentadas.</p>
+    <div class="trilho"><ul class="livros" id="estante-professor"></ul></div>
+  </section>
+</main>
+
+<footer class="pe">
+  <div class="pe-in">
+    <img src="marca/confluencia_branco.png" alt="Editora Confluência">
+    <p><strong>Coleção Sorrisos do Saber</strong>
+      Coautoras: Dra. Maria Paula Viscardi Gomes e Dra. Renata Reis Camacho. Texto: Equipe pedagógica Editora Confluência.</p>
+  </div>
+</footer>
+
+<div id="leitor" hidden role="dialog" aria-modal="true" aria-labelledby="leitor-nome">
+  <div class="barra">
+    <button class="bt texto" id="voltar" type="button" aria-label="Voltar à estante">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>Estante</span></button>
+    <div class="leitor-tit"><strong id="leitor-nome">Livro</strong><span id="leitor-pag" aria-live="polite">1ª capa</span></div>
+    <select class="ir" id="ir" aria-label="Ir para"></select>
+    <button class="bt redondo" id="tela" type="button" aria-label="Tela cheia" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </div>
+  <div id="palco"></div>
+  <div class="controle">
+    <button class="bt redondo" id="ant" type="button" aria-label="Página anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <input class="regua" id="regua" type="range" min="0" max="1" value="0" step="1" aria-label="Posição no livro">
+    <button class="bt redondo" id="prox" type="button" aria-label="Próxima página">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</div>
+
+<!-- StPageFlip 2.0.7 (licença MIT, ver js/page-flip-LICENSE.txt) -->
+<script src="js/page-flip.browser.js"></script>
+<script>
+(function(){
+  const RATIO = 929/1246;
+  const pad = n => String(n).padStart(2,'0');
+  // Índice no livro digital = página impressa + 1 (0 = 1ª capa, 1 = 2ª capa, penúltimo = 3ª capa, último = 4ª capa)
+  const VOLUMES = [
+    {id:'inf4', sigla:'INF. 4', nome:'Infantil 4', curto:'Inf. 4', titulo:'Minha boca conta histórias', cor:'#FF8552',
+     lc:'lc-inf4', lp:'lp-inf4', lpTotal:36, jogo:'Jogo das carinhas', lp3:'As videoaulas',
+     caps:['Oi, boca!','Dentes que sorriem','A língua que prova os sabores','Minha escova, meu par','Escovar com quem cuida de mim','Fruta é gostoso, água também','Hora de dormir, hora de escovar','Visita ao dentista sem medo']},
+    {id:'inf5', sigla:'INF. 5', nome:'Infantil 5', curto:'Inf. 5', titulo:'Dentes de leite', cor:'#FFC531',
+     lc:'lc-inf5', lp:'lp-inf5', lpTotal:36, jogo:'Jogo das Cartas do Sorriso', lp3:'As videoaulas',
+     caps:['Meus dentes de leite','Um pinguinho de creme dental','Escovar todos os cantinhos','Tchau, chupeta e mamadeira','Dedo é para brincar','Água, a bebida do sorriso','O dente balançou!','Festa do sorriso']},
+    {id:'1ano', sigla:'1º ANO', nome:'1º ano', curto:'1º ano', titulo:'Para que servem os dentes?', cor:'#86C440',
+     lc:'lc-1ano', lp:'lp-1ano', lpTotal:60, jogo:'Jogo das caretas', lp3:'As videoaulas',
+     caps:['A boca e o corpo','Cortar, rasgar, triturar','O dente dos 6 anos','Escovação passo a passo','Fio dental, o ajudante','Higiene da cabeça aos pés','Lanche que sorri','Sorriso que sabe']},
+    {id:'2ano', sigla:'2º ANO', nome:'2º ano', curto:'2º ano', titulo:'Dentes que trocam, cuidados que protegem', cor:'#22BFB0',
+     lc:'lc-2ano', lp:'lp-2ano', lpTotal:60, jogo:'Trilha do sorriso', lp3:'As videoaulas',
+     caps:['Caiu um dente!','A janelinha e o dente novo','De que é feita a escova?','Boca não é lugar de brinquedo','Cuidado na brincadeira e no esporte','Socorro, meu dente!','Agora eu escovo sozinho','Plano do sorriso da turma']},
+    {id:'3ano', sigla:'3º ANO', nome:'3º ano', curto:'3º ano', titulo:'Mastigar, falar, respirar', cor:'#4C9EE6',
+     lc:'lc', lp:'lp', lpTotal:60, jogo:'Jogo do placar', lp3:'As videoaulas',
+     caps:['A boca trabalha','Mastigar devagar','Dentes de bicho','Boca que fala','Respirar pelo nariz','Mania de morder','Escova e fio sem ajuda','Monitores júnior']}
+  ];
+
+  function marcosLC(v){
+    return [['Capa',0],['Boas-vindas · p. 1',2],['A nossa turma · p. 3',4]]
+      .concat(v.caps.map((t,i)=>['Cap. '+(i+1)+' · '+t, 4*(i+1)+1]))
+      .concat([['Meu sorriso agora · p. 36',37],['Certificado',38],['4ª capa',39]]);
+  }
+  function marcosLP(v){
+    const ini = [['Capa',0],['Para começar · p. 1',2],['A coleção · p. 2',3],['Como usar · p. 4',5],['O ano em um olhar · p. 5',6],
+      ['BNCC · p. 6',7],['Escovação de todo dia · p. 8',9],['Sinais de alerta · p. 10',11],[v.jogo+' · p. 11',12]];
+    if (v.lpTotal===36){ // Caderno de planos (Infantil): plano em 2 páginas por capítulo
+      return ini.concat(v.caps.map((t,i)=>['Cap. '+(i+1)+' · '+t, 13+2*i]))
+        .concat([['Registro da turma · p. 28',29],['Para recortar · p. 29',30],[v.lp3,34],['4ª capa',35]]);
+    }
+    // Livro da Criança comentado (1º ao 3º ano): plano + 4 páginas comentadas por capítulo
+    return ini.concat([['Registro da turma · p. 12',13],['Páginas 1 a 3 comentadas · p. 13',14]])
+      .concat(v.caps.map((t,i)=>['Cap. '+(i+1)+' · '+t, 17+5*i]))
+      .concat([['Página 36 comentada · p. 56',57],[v.lp3,58],['4ª capa',59]]);
+  }
+
+  const LIVROS = {};
+  VOLUMES.forEach(v=>{
+    LIVROS['crianca-'+v.id] = {nome:'Livro da Criança · '+v.nome, curto:'Criança · '+v.curto, pasta:v.lc, total:40, marcos:marcosLC(v)};
+    LIVROS['professor-'+v.id] = {nome:'Livro do Professor · '+v.nome, curto:'Professor · '+v.curto, pasta:v.lp, total:v.lpTotal, marcos:marcosLP(v)};
+  });
+
+  function montarEstante(ulId, tipo){
+    const ul = document.getElementById(ulId);
+    const rotTipo = tipo==='lc' ? 'Livro da Criança' : 'Livro do Professor';
+    VOLUMES.forEach(v=>{
+      const li = document.createElement('li');
+      const ativo = !!v.id;
+      const rota = (tipo==='lc'?'crianca-':'professor-') + (v.id||'');
+      const el = document.createElement(ativo ? 'a' : 'div');
+      el.className = 'livro ' + (ativo ? 'ativo' : 'inativo');
+      if (ativo){ el.href = '#'+rota; el.setAttribute('aria-label', rotTipo+', '+v.nome+': '+v.titulo+'. Folhear'); }
+      else { el.setAttribute('aria-hidden','true'); }
+      const img = document.createElement('img');
+      img.src = v[tipo]+'/p01.jpg'; img.alt = ''; img.loading = 'lazy'; img.decoding = 'async';
+      el.appendChild(img);
+      if (ativo){ const f=document.createElement('span'); f.className='folhear'; f.textContent='Folhear'; el.appendChild(f); }
+      const etq = document.createElement('div'); etq.className='etq';
+      etq.innerHTML = '<span class="chip" style="--cor:'+v.cor+'"><i></i>'+v.sigla+'</span><b></b>' + (ativo?'':'<em>Em breve</em>');
+      etq.querySelector('b').textContent = v.titulo;
+      if(!ativo){ const s=document.createElement('span'); s.className='sr'; s.textContent=rotTipo+', '+v.nome+': '+v.titulo+'. Em breve.'; etq.appendChild(s); }
+      li.append(el, etq); ul.appendChild(li);
+    });
+    // no celular, mostra o livro ativo na estante
+    requestAnimationFrame(()=>{
+      const tr = ul.parentElement, a = ul.querySelector('.ativo');
+      if (a && tr.scrollWidth > tr.clientWidth){ tr.scrollLeft = a.parentElement.offsetLeft - (tr.clientWidth - a.offsetWidth)/2; }
+    });
+  }
+  montarEstante('estante-crianca','lc');
+  montarEstante('estante-professor','lp');
+
+  // ---------- Leitor ----------
+  const leitor = document.getElementById('leitor'), palco = document.getElementById('palco');
+  const nomeEl = document.getElementById('leitor-nome'), pagEl = document.getElementById('leitor-pag');
+  const regua = document.getElementById('regua'), ir = document.getElementById('ir');
+  const bAnt = document.getElementById('ant'), bProx = document.getElementById('prox');
+  const bTela = document.getElementById('tela'), bVoltar = document.getElementById('voltar');
+  const reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pf = null, atual = null, idx = 0, layout = null, paginas = [], ultimoFoco = null, avisoT = null;
+
+  function rotulo(i, n){
+    if (i===0) return '1ª capa';
+    if (i===1) return '2ª capa';
+    if (i===n-2) return '3ª capa';
+    if (i===n-1) return '4ª capa';
+    return 'p. '+(i-1);
+  }
+  function rotuloVista(i){
+    const n = atual.total;
+    if (!pf || pf.getOrientation()==='portrait' || i===0 || i===n-1) return rotulo(i,n);
+    const e = (i%2===1) ? i : i-1, d = e+1;
+    if (d>=n) return rotulo(e,n);
+    const a = rotulo(e,n), b = rotulo(d,n);
+    if (a.startsWith('p. ') && b.startsWith('p. ')) return 'pp. '+(e-1)+' e '+(d-1);
+    return a+' e '+b;
+  }
+
+  function calcular(){
+    const cs = getComputedStyle(palco);
+    const W = palco.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    const H = palco.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    const pwL = Math.min(W/2, H*RATIO), pwP = Math.min(W, H*RATIO);
+    const deitado = pwL >= 300 || pwL >= pwP*0.95;
+    const pw = Math.max(120, Math.floor(deitado ? pwL : pwP));
+    return {deitado, pw, ph: Math.floor(pw/RATIO)};
+  }
+
+  function carregarPerto(i){
+    const n = paginas.length;
+    for (let k=Math.max(0,i-4); k<=Math.min(n-1,i+7); k++){
+      const im = paginas[k].querySelector('img');
+      if (im && !im.getAttribute('src')){
+        im.src = im.dataset.src;
+        const pg = paginas[k];
+        if (!im.complete){ pg.classList.add('carregando'); im.addEventListener('load',()=>pg.classList.remove('carregando'),{once:true}); im.addEventListener('error',()=>pg.classList.remove('carregando'),{once:true}); }
+      }
+    }
+  }
+
+  function criarPaginas(){
+    const n = atual.total, arr = [];
+    for (let i=0;i<n;i++){
+      const d = document.createElement('div');
+      d.className = 'pag';
+      if (i<2 || i>=n-2) d.dataset.density = 'hard';
+      const im = document.createElement('img');
+      im.alt = atual.nome+', '+rotulo(i,n);
+      im.dataset.src = atual.pasta+'/p'+pad(i+1)+'.jpg';
+      im.draggable = false; im.decoding = 'async';
+      d.appendChild(im); arr.push(d);
+    }
+    return arr;
+  }
+
+  function montar(inicio){
+    if (pf){ try{ pf.destroy(); }catch(e){} pf = null; }
+    palco.innerHTML = '';
+    layout = calcular();
+    const host = document.createElement('div');
+    host.className = 'livro-host';
+    host.style.width = (layout.deitado ? layout.pw*2 : layout.pw)+'px';
+    host.style.height = layout.ph+'px';
+    palco.appendChild(host);
+    paginas = criarPaginas();
+    carregarPerto(inicio);
+    pf = new St.PageFlip(host, {
+      width: layout.pw, height: layout.ph, size:'fixed', autoSize:false,
+      showCover:true, usePortrait:true, startPage:inicio,
+      maxShadowOpacity:.45, drawShadow:true, flippingTime: reduz ? 1 : 750,
+      mobileScrollSupport:false, showPageCorners:true, swipeDistance:24
+    });
+    pf.loadFromHTML(paginas);
+    pf.on('flip', e => atualizar(e.data));
+    pf.on('changeOrientation', () => atualizar(pf.getCurrentPageIndex()));
+    atualizar(pf.getCurrentPageIndex());
+  }
+
+  function atualizar(i){
+    idx = i;
+    carregarPerto(i);
+    pagEl.textContent = rotuloVista(i);
+    regua.value = i;
+    regua.setAttribute('aria-valuetext', rotuloVista(i));
+    const n = atual.total;
+    bAnt.disabled = i<=0;
+    bProx.disabled = pf && pf.getOrientation()==='landscape' ? (i>=n-1 || (i%2===1 && i+1>=n-1)) : i>=n-1;
+    // marca o capítulo no seletor
+    let sel = 0;
+    atual.marcos.forEach((m,k)=>{ if (m[1] <= i+ (pf && pf.getOrientation()==='landscape' && i%2===1 ? 1 : 0)) sel = k; });
+    ir.selectedIndex = sel;
+  }
+
+  function aviso(txt){
+    let a = palco.querySelector('.aviso');
+    if (!a){ a = document.createElement('div'); a.className='aviso'; palco.appendChild(a); }
+    a.textContent = txt; a.classList.remove('some');
+    clearTimeout(avisoT); avisoT = setTimeout(()=>a.classList.add('some'), 3200);
+  }
+
+  function abrir(rota){
+    const livro = LIVROS[rota];
+    if (!livro) return;
+    ultimoFoco = document.activeElement;
+    atual = livro;
+    nomeEl.innerHTML = '<span class="longo"></span><span class="curto"></span>';
+    nomeEl.querySelector('.longo').textContent = livro.nome; nomeEl.querySelector('.curto').textContent = livro.curto;
+    document.title = livro.nome+' · Sorrisos do Saber';
+    regua.max = livro.total-1;
+    ir.innerHTML = '';
+    livro.marcos.forEach(m=>{ const o=document.createElement('option'); o.value=m[1]; o.textContent=m[0]; ir.appendChild(o); });
+    leitor.hidden = false;
+    document.body.style.overflow = 'hidden';
+    montar(0);
+    aviso(matchMedia('(hover: none), (pointer: coarse)').matches ? 'Arraste a página para o lado para virar' : 'Clique na página ou use as setas do teclado');
+    bVoltar.focus({preventScroll:true});
+  }
+
+  function fechar(){
+    if (pf){ try{ pf.destroy(); }catch(e){} pf = null; }
+    palco.innerHTML = '';
+    leitor.hidden = true; atual = null;
+    document.body.style.overflow = '';
+    document.title = 'Estante Sorrisos do Saber';
+    if (document.fullscreenElement){ document.exitFullscreen().catch(()=>{}); }
+    if (ultimoFoco && ultimoFoco.focus) ultimoFoco.focus({preventScroll:true});
+  }
+
+  function rota(){
+    const h = location.hash.replace('#','');
+    if (LIVROS[h]){ if (!atual || atual !== LIVROS[h]) abrir(h); }
+    else if (atual){ fechar(); }
+  }
+  window.addEventListener('hashchange', rota);
+
+  function irPara(i){
+    if (!pf) return;
+    i = Math.max(0, Math.min(atual.total-1, i));
+    pf.turnToPage(i);
+    atualizar(pf.getCurrentPageIndex());
+  }
+
+  bVoltar.addEventListener('click', ()=>{ history.length>1 && /^#(crianca|professor)-/.test(location.hash) ? (location.hash='estante') : fechar(); });
+  bAnt.addEventListener('click', ()=> pf && pf.flipPrev());
+  bProx.addEventListener('click', ()=> pf && pf.flipNext());
+  regua.addEventListener('input', ()=>{ if(atual) pagEl.textContent = rotulo(+regua.value, atual.total); });
+  regua.addEventListener('change', ()=> irPara(+regua.value));
+  ir.addEventListener('change', ()=> irPara(+ir.value));
+
+  document.addEventListener('keydown', e=>{
+    if (leitor.hidden) return;
+    if (e.target === regua || e.target === ir) { if (e.key==='Escape') location.hash='estante'; return; }
+    if (e.key==='ArrowRight' || e.key==='PageDown'){ e.preventDefault(); pf && pf.flipNext(); }
+    else if (e.key==='ArrowLeft' || e.key==='PageUp'){ e.preventDefault(); pf && pf.flipPrev(); }
+    else if (e.key==='Home'){ e.preventDefault(); irPara(0); }
+    else if (e.key==='End'){ e.preventDefault(); irPara(atual.total-1); }
+    else if (e.key==='Escape' && !document.fullscreenElement){ location.hash='estante'; }
+  });
+
+  // mantém o foco dentro do leitor
+  leitor.addEventListener('keydown', e=>{
+    if (e.key!=='Tab') return;
+    const f = [...leitor.querySelectorAll('button:not([disabled]):not([hidden]),select,input')];
+    if (!f.length) return;
+    const a = f[0], z = f[f.length-1];
+    if (e.shiftKey && document.activeElement===a){ e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement===z){ e.preventDefault(); a.focus(); }
+  });
+
+  if (document.fullscreenEnabled){
+    bTela.hidden = false;
+    bTela.addEventListener('click', ()=>{
+      if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+      else leitor.requestFullscreen().catch(()=>{});
+    });
+  }
+
+  let rt = null;
+  function aoRedimensionar(){
+    if (!atual) return;
+    clearTimeout(rt);
+    rt = setTimeout(()=>{
+      const novo = calcular();
+      if (!layout || novo.deitado!==layout.deitado || Math.abs(novo.pw-layout.pw)/layout.pw > 0.03) montar(idx);
+    }, 160);
+  }
+  window.addEventListener('resize', aoRedimensionar);
+  document.addEventListener('fullscreenchange', aoRedimensionar);
+
+  if (typeof St === 'undefined'){
+    // sem a biblioteca de folhear, abre as páginas em rolagem simples
+    window.St = { PageFlip: function(host, s){
+      host.style.height='auto'; host.style.overflow='auto'; host.style.maxHeight='100%';
+      let cur = 0, els = [];
+      return {
+        loadFromHTML(a){ els=a; a.forEach(p=>{ const im=p.querySelector('img'); if(im&&!im.src) im.src=im.dataset.src; p.style.width=s.width+'px'; p.style.height=s.height+'px'; p.style.margin='0 auto 12px'; host.appendChild(p); }); },
+        on(){}, getCurrentPageIndex(){ return cur; }, getOrientation(){ return 'portrait'; },
+        flipNext(){ cur=Math.min(els.length-1,cur+1); els[cur].scrollIntoView({block:'start'}); atualizar(cur); },
+        flipPrev(){ cur=Math.max(0,cur-1); els[cur].scrollIntoView({block:'start'}); atualizar(cur); },
+        turnToPage(i){ cur=i; els[i].scrollIntoView({block:'start'}); }, destroy(){ host.remove(); }
+      };
+    }};
+  }
+
+  rota();
+})();
+</script>
+</body>
+</html>
